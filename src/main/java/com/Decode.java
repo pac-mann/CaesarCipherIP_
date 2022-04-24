@@ -1,18 +1,22 @@
 package com;
 
 public class Decode {
-    private String plainText;
+    private String decodeText;
     private int decodeKey;
 
-    public Decode(String plainText, int decodeKey) {
-        this.plainText = plainText;
+    public Decode(String decodeText, int decodeKey) {
+        this.decodeText = decodeText;
         this.decodeKey = decodeKey;
     }
-
-    public String getPlainText() {
-        return plainText;
+    public void setDecodetext(String decodeText) {
+        this.decodeText = decodeText.toUpperCase();
     }
-
+    public String getDecodeText() {
+        return decodeText;
+    }
+    public void setDecodeKey(Integer decodeKey) {
+        this.decodeKey = decodeKey;
+    }
     public int getDecodeKey() {
         return decodeKey;
     }

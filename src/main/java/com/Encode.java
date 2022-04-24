@@ -1,23 +1,24 @@
 package com;
 
-import static java.lang.System.out;
-
 public class Encode {
-
-    private String plainText;
+    private String encodeText;
       private int encodeKey;
 
-    public Encode(String plainText, int encodeKey) {
-        this.plainText = plainText;
+    public Encode(String encodeText, int encodeKey) {
+        this.encodeText = encodeText;
         this.encodeKey = encodeKey;
     }
-
+    public void setEncodetext(String encodeText) {
+        this.encodeText = encodeText.toUpperCase();
+    }
+    public String getEncodeText() {
+        return encodeText;
+    }
+    public void setEncodeKey(Integer encodeKey) {
+        this.encodeKey = encodeKey;
+    }
     public int getEncodeKey() {
         return encodeKey;
-    }
-
-    public String getPlainText() {
-        return plainText;
     }
 }
 /*(int encryptionKey){
