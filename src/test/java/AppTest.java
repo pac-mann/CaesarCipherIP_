@@ -1,34 +1,31 @@
-
-package com;
-
+import com.Encode;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class DecodeTest {
+class AppTest {
     @Test
     void zeroIsAValidEncryptionKey(){
-        var decode = new Decode(" ", 0);
-        assertEquals(0, decode.decodeKey(0));
+        var encode = new Encode(" ", 0);
+        assertEquals(0, encode.encodeKey(0));
     }
     @Test
     void twentyFiveIsAValidEncryptionKey(){
-        var decode = new Decode(" ", 25);
-        assertEquals(25, decode.decodeKey(25));
+        var encode = new Encode(" ", 25);
+        assertEquals(25, encode.encodeKey(25));
     }
     @Test
     void negativeOneIsIllegalArgumentException(){
-        var decode = new Decode(" ", -1);
+        var encode = new Encode(" ", -1);
         assertThrows(IllegalArgumentException.class, () ->{
-            decode.decodeKey(-1 );
+            encode.encodeKey(-1 );
         });
     }
     @Test
     void twentySixIsIllegalArgumentException(){
-        var decode = new Decode(" ", 26);
+        var encode = new Encode(" ", 26);
         assertThrows(IllegalArgumentException.class, () ->{
-            decode.decodeKey(26 );
+            encode.encodeKey(26 );
         });
     }
-
 }

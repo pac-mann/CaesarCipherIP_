@@ -1,24 +1,35 @@
 package com;
 
 public class Decode {
-    private String decodeText;
-    private int decodeKey;
+    public String decodeText;
+    public int decryptionKey;
+    public int decodeKey(int decryptionKey){
+        if (decryptionKey < 0  ){
+            throw new IllegalArgumentException("Enter encryption key between 0 - 25");
+        } else if (decryptionKey > 25) {
+            throw new IllegalArgumentException("Enter encryption key between 0 - 25");
+        } else {
+            return decryptionKey;
+        }
+    }
 
     public Decode(String decodeText, int decodeKey) {
         this.decodeText = decodeText;
-        this.decodeKey = decodeKey;
+        this.decryptionKey = decodeKey;
     }
     public void setDecodetext(String decodeText) {
         this.decodeText = decodeText.toUpperCase();
     }
-    public String getDecodeText() {
+    public String getDecodeText()
+    {
         return decodeText;
     }
-    public void setDecodeKey(Integer decodeKey) {
-        this.decodeKey = decodeKey;
+    public void setDecodeKey(Integer decodeKey)
+    {
+        this.decryptionKey = decodeKey;
     }
     public int getDecodeKey() {
-        return decodeKey;
+        return decryptionKey;
     }
 }
     /*private String codedText = "";

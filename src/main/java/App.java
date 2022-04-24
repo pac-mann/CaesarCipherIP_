@@ -5,13 +5,10 @@ import com.Encode;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.ArrayList;
-import java.util.List;
-
 import static java.lang.System.*;
 
-
 public class App {
+
     public static void main(String[] args) {
         boolean programRunning = true;
         while (programRunning) {
@@ -29,27 +26,41 @@ public class App {
                         out.println("Enter your encryption key (between 0-25): ");
                         String stringEncodeKey = bufferedReader.readLine();
                         int intEncodeKey = Integer.parseInt(stringEncodeKey);
-                        Encode encode = new Encode(stringEncodeText, intEncodeKey);
+                        if (intEncodeKey < 0 ){
+                            out.println("Enter encryption key between 0 - 25");
+                        } else if (intEncodeKey > 25) {
+                            out.println("Enter encryption key between 0 - 25");
+                        }else {
 
-                        char[] encryptChars = encode.getEncodeText().toCharArray();
-                        for (char c : encryptChars) {
-                            c += encode.getEncodeKey();
-                            out.print( c);
+                            Encode encode = new Encode(stringEncodeText, intEncodeKey);
+
+                            char[] encryptChars = encode.getEncodeText().toCharArray();
+                            for (char c : encryptChars) {
+                                c += encode.getEncodeKey();
+                                out.print(c);
+                            }
                         }
                     } else if (navigationChoice.equals("2")) {
                         out.println("Enter the text you want to decode here: ");
                         String stringDecodeText = bufferedReader.readLine();
 
                         out.println("Enter your decryption key (between 0-25): ");
-                        String stringDecodeKey = bufferedReader.readLine();
-                        int intDecodeKey = Integer.parseInt(stringDecodeKey);
-                        Decode decode = new Decode(stringDecodeText, intDecodeKey);
+                        String stringDecryptionKey = bufferedReader.readLine();
+                        int intDecodeKey = Integer.parseInt(stringDecryptionKey);
 
-                        char[] decryptChars = decode.getDecodeText().toCharArray();
-                        for (char c : decryptChars) {
-                            c += -decode.getDecodeKey();
-                            out.print( c);
+                        if (intDecodeKey < 0 ){
+                            out.println("Enter encryption key between 0 - 25");
+                        } else if (intDecodeKey > 25) {
+                            out.println("Enter encryption key between 0 - 25");
+                        }else {
 
+                            Decode decode = new Decode(stringDecodeText, intDecodeKey);
+
+                            char[] encryptChars = decode.getDecodeText().toCharArray();
+                            for (char c : encryptChars) {
+                                c += decode.getDecodeKey();
+                                out.print(c);
+                            }
                         }
                     }
                     out.println("\r\n"  + "Please choose: " + "1 (Encode), 2 (Decode) or 3 (Exit)");
