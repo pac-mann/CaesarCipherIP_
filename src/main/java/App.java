@@ -1,4 +1,5 @@
 
+import com.Decode;
 import com.Encode;
 
 import java.io.BufferedReader;
@@ -31,6 +32,21 @@ public class App {
                     out.print(c);
                 }
             } else if (navigationChoice.equals("2")) {
+                out.println("Enter the text you want to decode here: ");
+                String stringPlainText = bufferedReader.readLine();
+                out.println(stringPlainText);
+
+                out.println("Enter your decryption key: ");
+                String stringDecodeKey = bufferedReader.readLine();
+                int intDecodeKey = Integer.parseInt(stringDecodeKey);
+                out.println(stringDecodeKey);
+                Decode decode = new Decode(stringPlainText, intDecodeKey);
+
+                char[] encryptChars = stringPlainText.toCharArray();
+                for (char c : encryptChars) {
+                    c += -intDecodeKey;
+                    out.print(c);
+                }
 
             }else if (navigationChoice.equals("3")) {
 
