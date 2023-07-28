@@ -1,6 +1,6 @@
 # CAESAR CIPHER
 #### A command line encrypting and decrypting application, 23 April 2022.
-#### By **Drucilla Mumba**
+#### By **Kevin Onyango**
 ## Description
 This is a command line caesar cipher. A user can encrypt a message using the key provided. A user can also decrypt a message using the key.
 ## Behaviour
